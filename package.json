@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
+    "postinstall": "prisma generate",
+    "postbuild": "cp -r ./public ./out/public",
+    "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
-    "postinstall": "prisma generate",
-    "postbuild": "cp -r ./public ./out/public"
   },
   "dependencies": {
     "@prisma/client": "^5.16.1",
